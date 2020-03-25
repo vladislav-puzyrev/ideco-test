@@ -128,7 +128,7 @@ type ThunkType = ThunkAction<Promise<void>, RootReducerType, unknown, ActionType
 
 export const getTodos = (): ThunkType => {
   return async (dispatch) => {
-    const res = await axios.get('http://jsonplaceholder.typicode.com/todos')
+    const res = await axios.get('https://jsonplaceholder.typicode.com/todos')
     const todos = res.data
     dispatch(setTodos(todos))
   }
@@ -136,7 +136,7 @@ export const getTodos = (): ThunkType => {
 
 export const getUsers = (): ThunkType => {
   return async (dispatch) => {
-    const res = await axios.get('http://jsonplaceholder.typicode.com/users')
+    const res = await axios.get('https://jsonplaceholder.typicode.com/users')
     const users = res.data
     dispatch(setUsers(users))
   }
