@@ -1,0 +1,22 @@
+.form {
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.form > * {
+  margin: 0 20px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.error {
+  color: #ff3a3c;
+  position: absolute;
+  top: -5px;
+}
