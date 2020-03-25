@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "609864f7b5225308963471a73bb1f41b",
+    "revision": "485d38127bb722ea9c916e8c86d7aa22",
     "url": "/ideco-test/index.html"
   },
   {
-    "revision": "14e29d1967e077a07529",
+    "revision": "095ed0950cd206468282",
     "url": "/ideco-test/static/css/main.4076f4b9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ideco-test/static/js/2.9e74cb74.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "14e29d1967e077a07529",
-    "url": "/ideco-test/static/js/main.012cbfd6.chunk.js"
+    "revision": "095ed0950cd206468282",
+    "url": "/ideco-test/static/js/main.abfd1f84.chunk.js"
   },
   {
     "revision": "b3d06857024c1fec9e9e",
