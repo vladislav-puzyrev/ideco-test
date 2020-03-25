@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ideco-test/static/css/main.4076f4b9.chunk.css",
+    "main.js": "/ideco-test/static/js/main.012cbfd6.chunk.js",
+    "main.js.map": "/ideco-test/static/js/main.012cbfd6.chunk.js.map",
+    "runtime-main.js": "/ideco-test/static/js/runtime-main.f4c1344a.js",
+    "runtime-main.js.map": "/ideco-test/static/js/runtime-main.f4c1344a.js.map",
+    "static/js/2.9e74cb74.chunk.js": "/ideco-test/static/js/2.9e74cb74.chunk.js",
+    "static/js/2.9e74cb74.chunk.js.map": "/ideco-test/static/js/2.9e74cb74.chunk.js.map",
+    "index.html": "/ideco-test/index.html",
+    "precache-manifest.5bb332a14c803077957e2ab73527c7d0.js": "/ideco-test/precache-manifest.5bb332a14c803077957e2ab73527c7d0.js",
+    "service-worker.js": "/ideco-test/service-worker.js",
+    "static/css/main.4076f4b9.chunk.css.map": "/ideco-test/static/css/main.4076f4b9.chunk.css.map",
+    "static/js/2.9e74cb74.chunk.js.LICENSE.txt": "/ideco-test/static/js/2.9e74cb74.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f4c1344a.js",
+    "static/js/2.9e74cb74.chunk.js",
+    "static/css/main.4076f4b9.chunk.css",
+    "static/js/main.012cbfd6.chunk.js"
+  ]
+}
