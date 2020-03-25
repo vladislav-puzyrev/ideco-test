@@ -9,35 +9,26 @@ import { useDispatch } from 'react-redux'
 
 const MyTextInput = ({ label, ...props }: any) => {
   const [field, meta] = useField(props)
+
   return (
     <div className={s.wrapper}>
-      <TextField label="Название задачи" {...field} {...props}/>
-      {
-        meta.touched && meta.error ? (
-          <div className={s.error}>{meta.error}</div>
-        ) : null
-      }
+      <TextField fullWidth label="Название задачи" {...field} {...props}/>
+      {meta.touched && meta.error && <div className={s.error}>{meta.error}</div>}
     </div>
   )
 }
 
 const MySelect = ({ label, ...props }: any) => {
   const [field, meta] = useField(props)
-  const users = props.users
+
   return (
     <div className={s.wrapper}>
-      <Select {...field} {...props}>
-        {
-          users?.map((user: any) => (
-            <MenuItem key={user.id} value={user.username}>{user.username}</MenuItem>
-          ))
-        }
+      <Select fullWidth {...field} {...props}>
+        {props.users?.map((user: any) => (
+          <MenuItem key={user.id} value={user.username}>{user.username}</MenuItem>
+        ))}
       </Select>
-      {
-        meta.touched && meta.error ? (
-          <div className={s.error}>{meta.error}</div>
-        ) : null
-      }
+      {meta.touched && meta.error && <div className={s.error}>{meta.error}</div>}
     </div>
   )
 }
@@ -61,7 +52,7 @@ const AddTaskForm: React.FC<IProps> = ({ users }) => {
           .required('Название обязательно'),
         user: Yup.string().required('Пользователь обязателен'),
       })}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values) => {
         dispatch(addTodo(
           values.title,
           users?.find(user => user.username === values.user)?.id
@@ -69,7 +60,6 @@ const AddTaskForm: React.FC<IProps> = ({ users }) => {
       }}
     >
       <Form>
-
         <div className={s.form}>
           <MyTextInput
             name="title"
@@ -80,10 +70,9 @@ const AddTaskForm: React.FC<IProps> = ({ users }) => {
           />
           <Button variant="contained" color="primary" type="submit">Создать задачу</Button>
         </div>
-
       </Form>
     </Formik>
   )
 }
 
-export default AddTaskForm
+export default React.memo(AddTaskForm)

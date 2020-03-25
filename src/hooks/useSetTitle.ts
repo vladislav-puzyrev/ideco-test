@@ -5,7 +5,7 @@ function useSetTitle (title: string | null) {
     if (title) {
       document.title = title
     }
-  })
+  }, [title])
 }
 
 export default useSetTitle

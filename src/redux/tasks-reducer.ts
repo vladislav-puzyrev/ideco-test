@@ -72,7 +72,7 @@ function tasksReducer (state = initialState, action: ActionTypes): InitialStateT
           ...state.todos,
           {
             userId: action.userId,
-            id: state.todos?.length ? state.todos.length + 1 : 0,
+            id: state.todos?.length && state.todos.length + 1,
             title: action.title,
             completed: false,
           }

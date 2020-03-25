@@ -1,5 +1,4 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import React, { useEffect } from 'react'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
@@ -14,12 +13,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import { deleteTodo, toggleTodoCompleted, setTodoTitle } from '../../redux/tasks-reducer'
 import { useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-})
+import useSetTitle from '../../hooks/useSetTitle'
 
 interface ITodoWithUserName extends ITodo {
   userName: string | undefined
@@ -27,26 +21,41 @@ interface ITodoWithUserName extends ITodo {
 
 interface IProps {
   rows: Array<ITodoWithUserName> | undefined
+  completedMode: 'Выполненная' | 'Не выполненная' | 'Любая'
+  searchString: string | null
 }
 
-const TasksTable: React.FC<IProps> = ({ rows }) => {
+const TasksTable: React.FC<IProps> = ({ rows, searchString, completedMode }) => {
   const dispatch = useDispatch()
-  const classes = useStyles()
   const { userID } = useParams()
-
   let userTodos = rows
+
   if (userID && rows) {
     userTodos = rows.filter(row => row.userId === +userID)
   }
 
+  if (searchString) {
+    userTodos = userTodos?.filter(row => row.title.includes(searchString))
+  }
+
+  if (completedMode === 'Выполненная') {
+    userTodos = userTodos?.filter(row => row.completed)
+  }
+
+  if (completedMode === 'Не выполненная') {
+    userTodos = userTodos?.filter(row => !row.completed)
+  }
+
+  useSetTitle(userTodos ? `Всего задач - ${userTodos.length}` : null)
+
   return (
     <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Статус</TableCell>
-            <TableCell align="right">Исполнитель задачи</TableCell>
-            <TableCell align="right">Название задачи</TableCell>
+            <TableCell align="left">Исполнитель задачи</TableCell>
+            <TableCell align="left">Название задачи</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -63,12 +72,12 @@ const TasksTable: React.FC<IProps> = ({ rows }) => {
                     {row.completed ? 'выполнено' : 'не выполнено'}
                   </Button>
                 </TableCell>
-                <TableCell align="right"><NavLink to={`/${row.userId}`}>{row.userName}</NavLink></TableCell>
-                <TableCell align="right">
+                <TableCell align="left"><NavLink to={`/${row.userId}`}>{row.userName}</NavLink></TableCell>
+                <TableCell align="left">
                   <TextField
                     onChange={(e) => {dispatch(setTodoTitle(row.id, e.target.value))}}
-                    label="Standard"
-                    value={row.title}/>
+                    value={row.title}
+                    fullWidth/>
                 </TableCell>
               </TableRow>
             ))
@@ -79,4 +88,4 @@ const TasksTable: React.FC<IProps> = ({ rows }) => {
   )
 }
 
-export default TasksTable
+export default React.memo(TasksTable)
