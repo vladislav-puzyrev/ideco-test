@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/ideco-test/static/css/main.4076f4b9.chunk.css",
-    "main.js": "/ideco-test/static/js/main.abfd1f84.chunk.js",
-    "main.js.map": "/ideco-test/static/js/main.abfd1f84.chunk.js.map",
+    "main.js": "/ideco-test/static/js/main.fa4f524d.chunk.js",
+    "main.js.map": "/ideco-test/static/js/main.fa4f524d.chunk.js.map",
     "runtime-main.js": "/ideco-test/static/js/runtime-main.f4c1344a.js",
     "runtime-main.js.map": "/ideco-test/static/js/runtime-main.f4c1344a.js.map",
-    "static/js/2.9e74cb74.chunk.js": "/ideco-test/static/js/2.9e74cb74.chunk.js",
-    "static/js/2.9e74cb74.chunk.js.map": "/ideco-test/static/js/2.9e74cb74.chunk.js.map",
+    "static/js/2.a84310a3.chunk.js": "/ideco-test/static/js/2.a84310a3.chunk.js",
+    "static/js/2.a84310a3.chunk.js.map": "/ideco-test/static/js/2.a84310a3.chunk.js.map",
     "index.html": "/ideco-test/index.html",
-    "precache-manifest.391db1e6d49ec2c4f187dc9be873d76a.js": "/ideco-test/precache-manifest.391db1e6d49ec2c4f187dc9be873d76a.js",
+    "precache-manifest.0cc3cd8b5a7e3092594b288b949d416b.js": "/ideco-test/precache-manifest.0cc3cd8b5a7e3092594b288b949d416b.js",
     "service-worker.js": "/ideco-test/service-worker.js",
     "static/css/main.4076f4b9.chunk.css.map": "/ideco-test/static/css/main.4076f4b9.chunk.css.map",
-    "static/js/2.9e74cb74.chunk.js.LICENSE.txt": "/ideco-test/static/js/2.9e74cb74.chunk.js.LICENSE.txt"
+    "static/js/2.a84310a3.chunk.js.LICENSE.txt": "/ideco-test/static/js/2.a84310a3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f4c1344a.js",
-    "static/js/2.9e74cb74.chunk.js",
+    "static/js/2.a84310a3.chunk.js",
     "static/css/main.4076f4b9.chunk.css",
-    "static/js/main.abfd1f84.chunk.js"
+    "static/js/main.fa4f524d.chunk.js"
   ]
 }
